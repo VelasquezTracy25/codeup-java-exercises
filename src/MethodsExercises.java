@@ -3,6 +3,14 @@ import java.util.Scanner;
 public class MethodsExercises {
 
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        setScanner(scanner);
+        // Dice Game
+        yahtzee();
+
+
+
         System.out.println(add(5, 2));
         System.out.println(subtract(5, 2));
         System.out.println(multiply(5, 2));
@@ -20,12 +28,18 @@ public class MethodsExercises {
         System.out.println("Enter a number between 1 and 16: ");
         System.out.println("Your factorial result = " + factorial(getInteger(1, 16)));
 
-        Scanner scanner = new Scanner(System.in);
-        setScanner(scanner);
-        // Dice Game
-        diceGame();
+
     }
 
+/*   Create four separate methods. Each will perform an arithmetic operation:
+
+    Addition
+    Subtraction
+    Multiplication
+    Division
+
+    Each function needs to take two parameters/arguments so that the operation can be performed.
+ */
 
 
     public static int add(int num, int n) {
@@ -47,10 +61,12 @@ public class MethodsExercises {
         return num / n;
     }
 
+//Add a modulus method that finds the modulus of two numbers.
     public static int modulus(int num, int n) {
         return num % n;
     }
 
+//Create your multiplication method without the * operator (Hint: a loop might be helpful).
     public static int multiplyRecursively(int a, int b) {
         int product = 0;
         if( a > 0 ) {
@@ -62,8 +78,7 @@ public class MethodsExercises {
         return product;
     }
 
-
-    ////Create a method that validates that user input is in a certain range
+//Create a method that validates that user input is in a certain range
     public static int getInteger(int min, int max) {
         Scanner sc = new Scanner(System.in);
         int userInput = sc.nextInt();
@@ -71,11 +86,10 @@ public class MethodsExercises {
             System.out.print("WRONG! Guess again.");
             userInput = getInteger(min, max);
         }
-        return userInput ;
+        return userInput;
         }
 
-
-    // Calculate the Factorial
+// Calculate the Factorial
     public static long factorial(int num) throws ArithmeticException {
         // factorial(5) = 5 * 4 * 3 * 2 * 1
         int factorial = 1;
@@ -83,10 +97,9 @@ public class MethodsExercises {
         for (int i = 1; i <= num; ++i) {
             factorial = factorial * i;
             if (previousFactorial > factorial) {
-                // part of bonus, to check if we have reached int overflow
-                throw new ArithmeticException("The factorial of " + num +
-                        " is too large to be represented by a long value;" +
-                        "it broke at " + i);
+         // part of bonus, to check if we have reached int overflow
+            throw new ArithmeticException("The factorial of " + num +           " is too large to be represented by a long value;" +
+            "it broke at " + i);
             }
         }
         return factorial;
@@ -106,10 +119,10 @@ public class MethodsExercises {
         scanner = s;
     }
 
-    public static void diceGame() {
+    public static void yahtzee() {
         // Ask the user to enter the number of sides for a pair of dice.
-        System.out.print("How many sides will be on each die? (1 to 20): ");
-        int numSides = getInteger(1,20);
+        System.out.print("How many sides will be on each die? (pick 5 because it's yahtzee - **5**): ");
+        int numSides = getInteger(1,5);
 
         while(true) {
             System.out.print("Hit enter to roll the dice, type 'exit' to exit: ");
@@ -119,16 +132,20 @@ public class MethodsExercises {
                 break; // typed in in 'exit' or other wise - exiting the program
             }
             // they hit the enter key
-
-            // generate dice rolls for 2 die
-            int diceSum = 0;
+            // generate dice rolls for 5 die
+            int yahtzee = 0;
 
             // going to generate a random number between 1 and (numSides)
             int diceValue1 = (int)(Math.random() * numSides) + 1;
             int diceValue2 = (int)(Math.random() * numSides) + 1;
+            int diceValue3 = (int)(Math.random() * numSides) + 1;
+            int diceValue4 = (int)(Math.random() * numSides) + 1;
+            int diceValue5 = (int)(Math.random() * numSides) + 1;
             System.out.println("Dice 1: " + diceValue1);
             System.out.println("Dice 2: " + diceValue2);
-            // 0 < x < 1     // *20  0.0001 < 19.99999
+            System.out.println("Dice 3: " + diceValue3);
+            System.out.println("Dice 4: " + diceValue4);
+            System.out.println("Dice 5: " + diceValue5);
         }
 
 
