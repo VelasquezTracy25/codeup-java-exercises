@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.Arrays;
 import java.util.Date; //auto imported to use "Date" class
 
-public class Practice {
+public class JavaPractice {
 
     public static void main(String[] args) {
         //public method - accessible from other parts of this program -  ***main should always be static
