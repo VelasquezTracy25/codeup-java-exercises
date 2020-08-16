@@ -1,3 +1,5 @@
+package Practice;
+
 import java.awt.*;
 import java.util.Arrays;
 import java.util.Date; //auto imported to use "Date" class
@@ -177,10 +179,29 @@ public class Practice {
         System.out.println(v); //returns 0
 
 
+//Casting
+
+        //Example of implicit casting (automatic casting):
+        //byte > short > int > long
+        short xx = 1;
+        int yy = xx +2;
+
+        System.out.println(yy); //returns 3
+        //In this example, we're adding a short (x) to an int (2). Java can take bytes from a short variable (2 bytes) and add to an int (4 bytes) because short is smaller than int. This makes them equal.
 
 
+        //explicit casting
+        //byte > short > int > long
+        String ttt = "1";
+        Integer.parseInt(ttt); //changes string to number/int
+        double yyy = Integer.parseInt(ttt) + 2;
+        System.out.println(yyy); //returns 3.0
 
-
+        //using double to return parsed string with decimal
+        String zzz = "1.1";
+        Integer.parseInt(ttt); //changes string to number/int
+        double hhh = Double.parseDouble(zzz) + 2;
+        System.out.println(hhh); //returns 3.1
 
     }
 
