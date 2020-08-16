@@ -1,38 +1,28 @@
-import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class MortgageCalculator {
     public static void main(String[] args) {
 
-        final byte MONTHS_IN_YEAR = 12;
-        final byte PERCENT = 100;
-
-        //import scanner and assign var
-        Scanner mortgageQs = new Scanner(System.in);
-
-
-        System.out.print("What is Your Principal?");
-        int principal = mortgageQs.nextInt();
-
-        System.out.print("Enter your interest rate.");
-        float annualInterest = mortgageQs.nextFloat();
-        float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
-
-        System.out.print("Period (Years): ");
-        byte years = mortgageQs.nextByte();
-        int numberOfPayments = years * MONTHS_IN_YEAR;
-
-        double mortgage = principal
-        * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments)
-        / Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("Mortgage: " + mortgageFormatted);
-
-
+        int principal = (int) readNumber("Principal: ", 1000, 100_000_000);
+        float annualInterest = (float) readNumber("Annual Interest: ", 1, 20);
+        byte years = (byte) readNumber("Period (Years): ", 0, 50);
 
         System.out.println("Your Principal is: $" + principal + ".\n" +
-        "Your Monthly Interest Rate is: " + monthlyInterest + "%. \n" + "You will take " + years + " years to pay off you mortgage.");
+        "Your Monthly Interest Rate is: " + (annualInterest/12) + "%. \n" + "You will take " + years + " years to pay off you mortgage.");
 
     }
+
+    public static double readNumber(String prompt, double min, double max) {
+        Scanner scanny = new Scanner(System.in);
+        double value;
+    while(true){
+                System.out.print(prompt);
+                value = scanny.nextFloat();
+                if (value >= min && value <=max)
+                break;
+                System.out.println("Enter a value between " + min + "and " + max);
+            }
+            return value;
+    }
+
 }
