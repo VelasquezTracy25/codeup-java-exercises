@@ -100,7 +100,6 @@ Copy and paste the code above and then run it. Does the result match with your e
 How is the above example different from the code block below?
 */
 
-// int three = (int) "three";
 
 // What are the two different types of errors we are observing?
 
