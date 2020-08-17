@@ -29,8 +29,12 @@ private String name;
 //The class should have a constructor that accepts a `String` value and sets the person's name to the passed string.
 
     //Constructor
+//    public Person(String name) {
+//        setName(name);
+//    }
+
     public Person(String name) {
-        setName(name);
+        this.name = name;
     }
 
 
@@ -40,28 +44,18 @@ private String name;
 //        Person person1 = new Person("John");
 //        Person person2 = new Person("John");
 //        System.out.println(person1.getName().equals(person2.getName())); // Are the same so they should equal. (Was right)
-//        System.out.println(person1 == person2); //Are the same so they should equal. (Was wrong.)
+//        System.out.println(person1 == person2); ///False
+
+        Person person1 = new Person("John");
+        Person person2 = person1;
+        System.out.println(person1 == person2); //True, in the first example, person1 and person2 were not equal but since we created person 2 and set to equal to person1, they are now equals
 
 //        Person person1 = new Person("John");
-//        Person person2 = person1;
-//        System.out.println(person1 == person2); //True
-
-//        Person person1 = new Person("John");
-//        Person person2 = person1;
+//        Person person2 = person1; //unlike JS where it creates a copy, sets up an alias that points to the same address. If you make a change to person2 happens to person1 and vice versa
 //        System.out.println(person1.getName()); //Prints John
 //        System.out.println(person2.getName()); //Prints John
-//        person2.setName("Jane");
+//        person2.setName("Jane"); // now that person 2 has been changed to Jane, person 1 will also change because of line 54
 //        System.out.println(person1.getName()); //Prints Jane
 //        System.out.println(person2.getName()); //Prints Jane
-
-
     }
-
-
-
-
-
-
-
-
 }
