@@ -29,14 +29,15 @@ public class Rectangle {
 
     // to formulas for area and perimeter
     public int getArea() {
+        System.out.println("Rectangle Area:");
         return length * width;
     }
 
     public int getPerimeter() {
+        System.out.println("Rectangle Perimeter:");
         return ((2 * length) + (2 * width));
     }
 
     public static void main(String[] args) {
-
     }
 }

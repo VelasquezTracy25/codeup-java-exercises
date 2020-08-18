@@ -8,12 +8,23 @@ package shapes;
 public class ShapesTest {
     public static void main(String[] args) {
     Rectangle box1 = new Rectangle (5,4);
-
+        System.out.println("Box 1:");
         System.out.println(box1.getArea());
         System.out.println(box1.getPerimeter());
 
     Rectangle box2 = new Rectangle (5,5);
+        System.out.println("Box 2:");
         System.out.println(box2.getArea());
         System.out.println(box2.getPerimeter());
+
+    Square square1 = new Square (5);
+        System.out.println("Square 1:");
+        System.out.println(square1.getArea());
+        System.out.println(square1.getPerimeter());
+
+    Square square2 = new Square (3);
+        System.out.println("Square 2:");
+        System.out.println(square2.getArea());
+        System.out.println(square2.getPerimeter());
     }
 }
