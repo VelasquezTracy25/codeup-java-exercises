@@ -1,10 +1,33 @@
 package shapes;
 
 public class Square extends Rectangle {
-
     public Square(int side) {
         super(side, side);
     }
+
+    @Override
+    public void setLength(double length) {
+        this.length = length;
+        this.width = length;
+    }
+
+    @Override
+    public void setWidth(double width) {
+        this.setLength(width);
+    }
+
+    @Override
+    public double getPerimeter() {
+        System.out.println("Square Perimeter:");
+        return 4 * this.length;
+    }
+    @Override
+    public double getArea() {
+        System.out.println("Square Area:");
+        return this.length * this.length;
+    }
+/*
+
 
     // Square should define a constructor that accepts one argument, side, and calls the parent's constructor to set both the length and width to the value of side.
 //    public Square(int side) {
@@ -28,8 +51,6 @@ public class Square extends Rectangle {
         System.out.println("Square Area:");
         return this.length * this.length;
     }
-
-    public static void main(String[] args) {
-    }
+*/
 
 }
