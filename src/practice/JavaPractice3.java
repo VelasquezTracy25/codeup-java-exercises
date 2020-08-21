@@ -1,6 +1,4 @@
-package Practice;
-
-import org.w3c.dom.ls.LSOutput;
+package practice;
 
 import java.util.Scanner;
 
