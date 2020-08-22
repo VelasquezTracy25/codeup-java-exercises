@@ -1,4 +1,8 @@
 package grades;
 
-public class student {
+public class Student {
+private String studentName;
+private int grades;
+
+
 }
