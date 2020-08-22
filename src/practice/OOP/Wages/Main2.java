@@ -1,4 +1,4 @@
-package Practice.OOP.Wages;
+package practice.OOP.Wages;
 
 public class Main2 {
     public static void main(String[] args) {

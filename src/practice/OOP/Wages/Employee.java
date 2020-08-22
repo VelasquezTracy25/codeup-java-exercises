@@ -1,4 +1,4 @@
-package Practice.OOP.Wages;
+package practice.OOP.Wages;
 
 public class Employee { //when instance is created these will be static within them
     public int baseSalary;

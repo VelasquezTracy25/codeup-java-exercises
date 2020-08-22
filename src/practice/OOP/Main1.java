@@ -1,4 +1,4 @@
-package Practice.OOP;
+package practice.OOP;
 
 public class Main1 {
     public static void main(String[] args) {
