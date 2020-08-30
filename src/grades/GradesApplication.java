@@ -13,6 +13,9 @@ public class GradesApplication {
 
     public static void main(String[] args) {
 
+
+        HashMap<String, Student> students = new HashMap<>();
+
         Student tracyVelasquez = new Student("Tracy", "Velasquez");
         tracyVelasquez.addGrade(90);
         tracyVelasquez.addGrade(80);
@@ -20,7 +23,7 @@ public class GradesApplication {
 
         Student vanessaRodriguez = new Student("Vanessa", "Rodriguez");
         vanessaRodriguez.addGrade(90);
-        vanessaRodriguez.addGrade(90);
+        vanessaRodriguez.addGrade(30);
         vanessaRodriguez.addGrade(100);
 
         Student jesseGarza = new Student("Jesse", "Garza");
@@ -34,26 +37,25 @@ public class GradesApplication {
         brianBarton.addGrade(100);
         brianBarton.addGrade(100);
 
-
-        HashMap<String, Student> students = new HashMap<>();
-
         students.put("VelasquezTracy25", tracyVelasquez);
         students.put("JesseIsCool", jesseGarza);
         students.put("Vanessa56", vanessaRodriguez);
         students.put("ExternalServerBrian", brianBarton);
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Hyperion Cohort! Please make a selection. \n\n" +
-                "\t0 - exit\n" +
+
+        System.out.println("Welcome to the Hyperion Cohort! \n Please make a selection. \n");
+        System.out.println("\t0 - exit\n" +
                 "\t1 - Search for a student\n" +
                 "\t2 - See all student grades\n" +
                 "\n" + "Select a number option.");
+
+        Scanner scanner = new Scanner(System.in);
         int userSelection = scanner.nextInt();
 
         if (userSelection == 0) {
             System.out.println("Exiting...");
         } else if (userSelection == 1) {
-            finalGrades(students);
+            cli(students);
         } else if (userSelection == 2) {
             System.out.println("\n\nDisplaying all student grades \n");
         } else {
@@ -61,33 +63,29 @@ public class GradesApplication {
         }
     }
 
-
-    public static void finalGrades(HashMap<String, Student> students) {
+    public static void cli(HashMap<String, Student> students) {
         do {
+            System.out.println("\nYou are now viewing the students in Hyperion cohort:\n");
             for (String key : students.keySet()) {
                 System.out.print(key + " | ");
             }
-
-            System.out.println("\n \nWhat student would you like to see more information on?\n");
-            String studentSelector = input.getString();
-
+            String studentSelector = input.getString("\n\nWhat student would you like to see more information on?\n");
             if (students.containsKey(studentSelector)) {
-
                 Student currentStudentName = students.get(studentSelector);
-
-                System.out.println(String.format("\n\tName: %s \n\tGitHub Username: %s \n\tCurrent Average: %.2f",
-                        currentStudentName.getName(), studentSelector, currentStudentName.getGradeAverage()));
-                System.out.println(String.format("\nHere are all grades for %s:\n", currentStudentName.getName()));
-                System.out.println(String.format("\tTest 1: %s \n\tQuiz 1: %s \n\tExercise 1 : %s", currentStudentName.getGrades().get(0), currentStudentName.getGrades().get(1), currentStudentName.getGrades().get(2)));
-                input.yesNo("Would you like to view another students grades?");
+                System.out.println(String.format("\n\tName: %s \n\tGitHub Username: %s \n\tCurrent Average: %.2f ",
+                        currentStudentName.getName(),
+                        studentSelector,
+                        currentStudentName.getGradeAverage()));
+                System.out.println(String.format("\nHere are all grades for %s:\n\n\tTest 1: %s \n\tQuiz 1: %s \n\tExercise 1 : %s",
+                        currentStudentName.getName(),
+                        currentStudentName.getGrades().get(0),
+                        currentStudentName.getGrades().get(1),
+                        currentStudentName.getGrades().get(2)));
             } else {
-                System.out.println("Sorry, cannot find student with the username of \"" + studentSelector + ".");
+                System.out.println("\nSorry, cannot find student with the username of \"" + studentSelector + "\".");
             }
-        } while (input.yesNo("Would you like to try again."));
-
-        System.out.println("Thank you for visiting!");
-
+//            System.out.println("\nWould you like to search again?");
+        } while (input.yesNo("\nWould you like to search again?"));
+        System.out.println("Goodbye, and have a wonderful day.");
     }
-
 }
-
