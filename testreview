@@ -1,0 +1,110 @@
+# Java Fundamentals
+​
+## Main Concepts to be Assessed
+​
+- Object Oriented Programming
+- Method Overriding and Method Overloading
+- Arrays
+- Inheritance and Polymorphism
+- Interfaces
+- Collections
+- Exceptions and Error Handling
+​
+## Currently not being assessed:
+- Annotations like @SuppressWarnings or @Deprecated
+- Files I/O
+- Abstract Classes
+- Deployment and Dependencies
+- Testing Code with JUnit
+​
+## Java Fundamentals Checklist
+The following are several points of competency and skill that are intended to help identify areas of additional practice and study. Not all answers are found in the Codeup curriculum.
+## Knowledge
+### Java I
+- [x] I can explain how Java code runs: from being written to executing on an operation system.
+- [x] I can explain the difference between a primitive type and a reference type in Java.
+    Primitive: int, boolean, bye, char
+    Reference: Reference types are those that refer to objects or arrays; they default to the special value null, which indicates a lack of an object.
+- [x] I can name several primitive types in Java.
+- [x] I can explain why multiple number primitive types are used.
+    To save memory
+- [x] I can give an example of implicit and explicit casting.
+    Implicit: less specific to more precise: int > long
+              int myInteger = 900;
+              long morePrecise = myInteger;
+    Explicit: more specific to less double > int
+        double pi = 3.14159;
+        int almostPi = (int) pi;
+- [x] I can explain the difference between a runtime and compile-time error.
+    Runtime: runs after code is run
+    Compile-time: runs before code is compiled(runs)
+- [x] I can identify the major editions of Java.
+- [x] I can define what a Java wrapper class is.
+    byte	Byte
+    short	Short
+    int	    Integer
+    long	Long
+    float	Float
+    double	Double
+    boolean	Boolean
+    char	Character
+    ArrayList<int> myNumbers = new ArrayList<int>(); // INVALID****
+    ArrayList<Integer> myNumbers = new ArrayList<Integer>(); // VALID***
+
+### Java II
+- [x] I can articulate what OOP is.
+- [x] I can identify the four levels of visibility for a class/field/method and the identifiers used.
+    public
+    private
+    protected
+    no modifier(package private)
+- [x] I know what class of static methods is often used when working with arrays.
+        java.util.Arrays
+            void Arrays.fill(arrayName, value) - Fills all elements of the specified array with the specified value.
+            boolean Arrays.equals(array1, array2) - true if both arrays are of the same type and all of the elements within the arrays are equal to each other.
+            array Arrays.copyOf(array, length) - Returns a copy of the given array with the specified length.
+            String Arrays.toString(array) - Returns a string representation of the array.
+            void Arrays.sort(array) - Sorts the elements of an array into ascending order.
+- [x] I can explain the difference between static (class) fields/methods and instance fields/methods.
+    static -- the presence of this keyword defines that the method belongs to the class, as opposed to instances of it.
+    Static fields are accessible through the class itself. In other words, they are accessible without creating an instance of the class.
+    Static fields are defined with the static keyword, and are shared by all instances of the class, meaning that static properties should not be anything that is supposed to be unique to instances of the class. Instead, they should contain information that all instances will use, or methods and properties that are meant to be accessed only statically. We'll take a look at examples of both cases.
+- [x] I can explain the difference between method overloading and method overriding.
+overloading: same method name with different args
+overridding: completely rewriting the code with the same name, return type and args
+
+- [ ] I can identify the four pillars of object-oriented programming and give examples of each one.
+- [ ] I can describe the differences between interfaces and abstract classes and their use cases.
+- [ ] I can generally describe what the Java Collections Framework is and specifically talk about the differences between a list, set, and map.
+       ArrayList is a class that represents an array that can change it's size. All elements in an ArrayList must be objects, and they must have the same type
+       A hash map is a data structure for key-value pairs, implemented with the HashMap class in Java. These are similar to objects in JavaScript. All of the keys in the hash map must be of the same type, and all of the values must be of the same type, but the keys and the values don't necessarily have to be the same type.
+
+- [ ] I can explain the difference between a checked and unchecked exception.
+- [ ] I can explain what a Java annotation is, why they are used, and give examples.
+- [ ] I can explain the difference between the throws and throw keywords with regard to exceptions.
+## Skills
+### Java I
+- [x] I can write a hello world Java program from scratch.
+- [x] I can write Java control statements (if, if/else, switch, ternary) and loops (while, do-while, for, for-each) from memory.
+- [x] I can write examples of the 8 Java primitive types.
+- [x] I can write examples of explicit casting and implicit casting.
+- [ ] I can convert a numeric string to a number and a number to a numeric string.
+- [x] I can define a constant.
+- [x] I can write a program that takes in user input and returns an output to the user.
+- [x] I can compare two string values.
+- [x] I can write out a program comprised of multiple methods.
+- [x] I can get the length of string, trim it, get a portion of the string, create a new string replacing some portion of it.
+### Java II
+- [ ] I can write a class that contains both static and instance fields and methods, constructors, setters and getters.
+- [ ] I can write a program composed of multiple classes requiring instantiation (not just using classes as groups of static methods).
+- [ ] I can write my own reference type and fill instances of it in an ArrayList and HashMap and use it as a return and input type of a method.
+- [ ] I can write an abstract class and a subclass that extends from the abstract class.
+- [ ] I can write multiple interfaces and implement their methods in another class.
+- [ ] I can create arrays of various data types and sizes with and without using an array initializer.
+- [ ] I can get the length of an array, get a specific element or range of elements, create a new array replacing some portion of it, and iterate over an array of elements.
+- [ ] I can do the above with an ArrayList.
+- [ ] I can comfortably use the helper methods of both Arrays and Collections classes.
+- [ ] I can write a program that throws a runtime exception.
+- [ ] I can write an example of method overloading and method overriding.
+- [ ] I can write a program that reads and writes to a file.
+- [ ] I can write methods and collections that work with a parent class or interface type but use instances of objects that extend from these parent classes or implement these interfaces (Polymorphism).

@@ -49,6 +49,8 @@ public class GradesApplication {
                 "\t2 - See all student grades\n" +
                 "\n" + "Select a number option.");
 
+
+
         Scanner scanner = new Scanner(System.in);
         int userSelection = scanner.nextInt();
 

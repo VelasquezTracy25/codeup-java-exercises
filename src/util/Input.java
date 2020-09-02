@@ -1,7 +1,6 @@
 package util;
 
 import java.util.Scanner;
-
 public class Input {
 
 
@@ -14,17 +13,18 @@ public class Input {
 // Will be used later to grab user's input (string) and "equalize" it by making it case insensitive
 
 
-    public String getString() {
-        return scanner.next().toLowerCase();
+    public String getString(String prompt) {
+        System.out.println(prompt);
+        return scanner.nextLine();
         //Next used instead of nextline
     }
 
 
-// The yesNo method should return true if the user enters y, yes, or variants thereof, and false otherwise.
-    public boolean yesNo() {
-        System.out.print("Would you like to play a game? ");
-        String input = getString();
-        if (input.equals("y") || input.equals("yes")) {
+    // The yesNo method should return true if the user enters y, yes, or variants thereof, and false otherwise.
+    public boolean yesNo(String prompt) {
+        System.out.println(prompt);
+        String input = scanner.nextLine();
+        if (input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")) {
             return true;
         } else {
             return false;
@@ -32,11 +32,18 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
+
         int input;
-        do {
-//            System.out.print();
-            input = getInt(); // calls itself again to loop until user guess right
-        } while (input < min || input > max);
+        try {
+            input = Integer.valueOf(this.getString("Give me a whole number between " + min + " and "  + max));
+        } catch (NumberFormatException e) {
+            return getInt(min, max);
+        }
+
+        if(input < min || input > max){
+            System.out.println(String.format("Sorry. %d is outside of the range, try again/", input));
+            return getInt(min, max);
+        }
         return input;
     }
 
@@ -50,25 +57,32 @@ public class Input {
 
 //The getInt(int min, int max) method should keep prompting the user for input until they give an integer within the min and max. The getDouble method should do the same thing, but with decimal numbers.
 
-//Used to grab user's input (int(s) only)
+    //Used to grab user's input (int(s) only)
     public int getInt() {
         return scanner.nextInt();
     }
 
     public double getDouble(double min, double max) {
         double input;
-        do {
-            System.out.print("Please enter in a double value: ");
-            input = getDouble(); //loop again
-        } while (input < min || input > max);
+        try {
+            input = Double.valueOf(this.getString("Give me a decimal between " + min + " and "  + max));
+        } catch (NumberFormatException e) {
+            return getDouble(min, max);
+        }
+
+        if(input < min || input > max){
+            System.out.println(String.format("Sorry. %.1f is outside of the range, try again.", input));
+            return getDouble(min, max);
+        }
         return input;
     }
-    public double getDouble() {
 
+    public double getDouble() {
         return scanner.nextDouble();
     }
 
 //Create another class named InputTest that has a static main method that uses all the methods from the Input class.
+
 }
 
 

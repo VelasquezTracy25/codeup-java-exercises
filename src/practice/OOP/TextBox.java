@@ -1,4 +1,4 @@
-package Practice.OOP;
+package practice.OOP;
 
 //syncs to Main1
 

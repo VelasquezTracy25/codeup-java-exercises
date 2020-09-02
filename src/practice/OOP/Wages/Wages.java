@@ -1,4 +1,4 @@
-package Practice.OOP.Wages;
+package practice.OOP.Wages;
 //syncs to Main 2
 
 public class Wages {
